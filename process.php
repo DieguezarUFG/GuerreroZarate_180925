@@ -2,7 +2,7 @@
 require("classes/estudiante.class.php");
 $Estudiantes = new Estudiante();
 
-//VARIABLE ESTUDIANTE
+
 $resultado = [];
 
 if($_SERVER["REQUEST_METHOD"]=="GET"){
@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     }
 }
 
-//$resultado = $Estudiantes->obtenerEstudiantes();
+
 
 header("Content-Type: Application/json");
 echo(json_encode($resultado));

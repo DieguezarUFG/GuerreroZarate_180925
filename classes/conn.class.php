@@ -4,7 +4,7 @@ class DB extends PDO {
 	
     public $id = 0;
     public $n = 0;
-    //public function __construct($dsn=NULL, $username = NULL, $password = NULL, $options = []) {
+    
 	public function __construct(){
 		$configuracion = new configuracion();
 		
@@ -13,7 +13,7 @@ class DB extends PDO {
             PDO::ATTR_EMULATE_PREPARES => false,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         ];
-        //$options = array_replace($default_options, $options);
+       
 		try{
 			parent::__construct($configuracion->dsn, $configuracion->user, $configuracion->pass, $default_options);
 		}catch(PDOException $e){

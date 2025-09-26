@@ -47,14 +47,14 @@ class Estudiante{
         return $this->idgenero;
     }
 
-    //Metodo para obtener todos los estudiantes
+    
     public function obtenerEstudiantes(){
         $resultado = $this->conexion->run('SELECT * FROM estudiante;');
         $array = array("mensaje"=>"Registros encontrados", "data"=>$resultado->fetchAll());
         return $array;
     }
 
-    //METODO PARA OBTENER UN ESTUDIANTE
+   
     public function obtenerEstudiante(int $idestudiante){
         if($idestudiante > 0){
             $resultado =$this->conexion->run('SELECT * FROM estudiante WHERE id_estudiante='.$idestudiante);
@@ -68,7 +68,7 @@ class Estudiante{
 
     public function nuevoEstudiante($fechanacimiento,$idestudiante){
         if(!empty($idgenero) && !empty($fechanacimiento)){
-            //VARIABLE DEL TIPO ARRAY PARA ENVIAR PARAMETROS A LA BASE DE DATOS
+          
             $parametros = array(
                 "fecha_nac" => $fechanacimiento,
                 "id_genero" => $idgenero
